@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Tim kiem nhan vien</h1>
+    <form action="../Controler/C_Staff.php" method="post">
+
+        <div style="text-align: center;">
+            <input type="radio" name="rdbtn" id="rdbtnIDNV" value="IDNV" checked>IDNV
+            <input type="radio" name="rdbtn" id="rdbtnHoten" value="Hoten">Ho ten
+            <input type="radio" name="rdbtn" id="rdbtnDiachi" value="Diachi">Dia chi
+            <br>
+            <input type="text" name="txtSearch" id="txtSearch">
+            <input type="submit" name="btnFind" id="btnFind" value="Find">
+        </div>
+
+    </form>
+    
+    <?php
+    echo '<a href="../View/index.php">home page</a>'
+    ?>
+
+</body>
+</html>

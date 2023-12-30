@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script lang="JavaScript">
+
+        function TextChangeHandle(){
+            let UserName = document.getElementById("txtUserName").value;
+            let PassWord =document.getElementById("txtPassWord").value;
+            var label = document.getElementById("myLable");
+            if(UserName == "" && PassWord != ""){
+                label.innerHTML="Bạn chưa nhập tên tài khoản";
+            }else if(PassWord == "" && UserName !=""){
+                label.innerHTML="Bạn chưa nhập mật khẩu";
+            }else if(PassWord == "" && UserName ==""){
+                label.innerHTML="Bạn chưa nhập tên tài khoản và mật khẩu";
+            }
+            else{
+                label.innerHTML="";
+            }
+            
+        }
+
+        function validateForm(){
+            let UserName = document.getElementById("txtUserName").value;
+            let Password = document.getElementById("txtPassWord").value;
+
+            if (UserName == "" || Password == "") {
+                alert("Vui lòng điền đầy đủ thông tin");
+                return false; 
+            }
+            return true; 
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <form name="formLogin" action="Controler/C_Staff.php" method="Post" onsubmit="validateForm()">
+        <H1 style="text-align: center;">LOGIN</H1>
+        
+        <table style="margin: auto;">
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="txtUserName" id="txtUserName" oninput="TextChangeHandle()"></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="txtPassWord" id="txtPassWord" oninput="TextChangeHandle()"></td> 
+                
+            </tr>
+        </table>
+        
+        
+        
+        <div style="text-align: center;">
+            <label style="color: rgb(201, 49, 49);" id="myLable">  </label>
+            <br>
+            <input type="submit" name="btnLogin" value=Login>
+            <input type="button" name="bt2" value=Reset>
+        </div>
+
+        <div style="text-align: center;">
+
+
+    </div>
+        
+        
+    </form>
+
+    <h3>1. <a href="Controler/C_Staff.php">Xem Nhan vien</a></h3>
+    <h3>2. <a href="Controler/C_PB.php">Xem Phong ban</a></h3>
+
+    <script>
+   
+        const urlParams = new URLSearchParams(window.location.search);
+        const alertParam = urlParams.get('alert');
+
+
+        if (alertParam === '1') {
+
+            alert('Sai TK hoac mat khau');
+        }
+    </script>
+
+</body>
+</html>

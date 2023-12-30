@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script lang="JavaScript">
+
+        function validateForm(){
+            let MaPB =document.getElementById("txtIDPB").value;
+            let TenPB =document.getElementById("txtTenpb").value;
+            let Mota =document.getElementById("txtMota").value;
+    
+    
+            if(MaPB == "" || TenPB =="" || Mota == ""){
+                alert("Vui lòng nhập đầy đủ thông tin");
+            }
+        }
+    
+    </script>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Cap nhat thong tin phong ban</h1>
+    <form action="../Controler/C_PB.php" method="post" onsubmit="validateForm()">
+
+        <div style="justify-content: center; display: flex;">
+        
+            <table>
+
+                <tr><td>Ma phong ban: </td><td><input type="text" name="txtIDPB" id="txtIDPB" value="<?php echo $PB->IDPB ?>" readonly></td></tr>
+                <tr><td>Ten phong ban: </td><td><input type="text" name="txtTenpb" id="txtTenpb" value="<?php echo $PB->Tenpb ?>"> </td></tr>
+                <tr><td>Mo ta: </td><td><input type="text" name="txtMota" id="txtMota" value="<?php echo $PB->Mota ?>"> </td></tr>
+
+            </table>
+
+           
+
+        
+        
+        </div>
+        <div style="text-align: center;">
+            <input type="submit" name="btnUpdatePB" value="Cap nhat">
+
+        </div>
+        
+        </form>
+
+        <?php
+        echo '<a href="../View/index.php">home page</a>'
+        ?>
+
+</body>
+</html>

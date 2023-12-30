@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1 style="text-align: center;">Danh sach phong ban</h1>
+    <?php
+
+    echo '<table border = "1" width = "100%">';
+
+
+    echo "<TR><TH>ID phong ban</TH><TH>Ten PB</TH><TH>Mo ta</TH><TH>Cap nhat</TH></TR>";
+
+        
+    for($i =0; $i< sizeof($PBList); $i++){
+        echo '<TR>
+            <TH>'.$PBList[$i]->IDPB.'</TH>
+            <TH>'.$PBList[$i]->Tenpb.'</TH>
+            <TH>'.$PBList[$i]->Mota.'</TH>
+            <TH><a href="../Controler/C_PB.php?IDPB='.$PBList[$i]->IDPB.'&formUpdatePB=1">xxx</a></TH>
+            </TR>';
+
+    }
+    echo '<a href="../View/index.php">home page</a>'
+    ?>
+
+
+
+</body>
+</html>

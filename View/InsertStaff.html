@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script lang="JavaScript">
+
+        function validateForm(){
+            let MaNhanVien =document.getElementById("txtIDNV").value;
+            let Name =document.getElementById("txtHoten").value;
+            let MaPB =document.getElementById("txtIDPB").value;
+            let Address =document.getElementById("txtDiachi").value;
+
+            if(MaNhanVien == "" || Name =="" || MaPB == ""||Address ==""){
+                alert("Vui lòng nhập đầy đủ thông tin");
+            }
+        }
+
+
+
+    </script>
+    <script type="text/javascript" src="file.js"></script>
+
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Them nhan vien</h1>
+
+    <form action="../Controler/C_Staff.php" method="post" onsubmit="validateForm()">
+
+        
+
+        <div style="justify-content: center; display: flex;">
+            <table>
+
+                <tr><td>Ma nhan vien:</td> <td><input type="text" name="txtIDNV" id="txtIDNV" onchange="TextChangeHandler()"></td></tr>
+                <tr><td>Ten nhan vien: </td><td><input type="text" name="txtHoten" id="txtHoten"></td></tr>
+                <tr><td>Ma phong ban: </td><td><input type="text" name="txtIDPB" id="txtIDPB"></td></tr>
+                <tr><td>Dia chi: </td><td><input type="text" name="txtDiachi" id="txtDiachi"></td></tr>
+                
+
+            </table>
+        
+             
+            
+    
+    
+        </div>
+        <div style="text-align: center;">
+            <label></label><br>
+
+            <input type="submit" name="btnAddStaff" value="Them">
+
+        </div>
+
+    </form>
+
+    <?php
+
+    echo '<a href="../View/index.php">home page</a>'
+
+    ?>
+
+</body>
+</html>

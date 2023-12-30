@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="../Controler/C_Staff.php" method="post">
+
+        <h1 style="text-align: center;">Danh sach nhan vien</h1>
+    <?php
+
+        echo '<table border = "1" width = "100%">';
+
+
+
+        echo "<TR><TH>Ma NV</TH><TH>Ho ten</TH><TH>Dia chi</TH><TH>IDPB</TH><TH>Xoa</TH></TR>";
+
+        if($staffList !=null){
+            for($i =0; $i< sizeof($staffList); $i++){
+                echo '<TR>
+                    <TH>'.$staffList[$i]->IDNV.'</TH>
+                    <TH>'.$staffList[$i]->Hoten.'</TH>
+                    <TH>'.$staffList[$i]->Diachi.'</TH>
+                    <TH>'.$staffList[$i]->IDPB.'</TH>
+                    <TH><input type="checkbox" name ="'.$staffList[$i]->IDNV.'" value = "'.$staffList[$i]->IDNV.'"></TH>
+                    </TR>';
+
+            }
+            
+            echo '<TH><input type="submit" name="btnDeleteMany" id="btnDeleteMany" value="Delete"> </TH>' ; 
+        }
+        
+        echo '<a href="../View/index.php">home page</a>'
+
+    ?>
+
+    </form>
+    
+        
+
+</body>
+</html>

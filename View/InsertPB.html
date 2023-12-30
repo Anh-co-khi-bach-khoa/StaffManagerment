@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Them phong ban</h1>
+    
+    <form action="../Controler/C_PB.php" method="post">
+
+        <div style="justify-content: center; display: flex;">
+            <table>
+
+                <tr><td>Ma phong ban: </td><td><input type="text" name="txtIDPB" id="txtIDPB"></td></tr>
+                <tr><td>Ten phong ban: </td> <td><input type="text" name="txtTenpb" id="txtTenpb"></td></tr>
+                <tr><td>Mo ta:</td> <td><input type="text" name="txtMota" id="txtMota"></td></tr>
+
+            </table>
+
+            <!-- Ma phong ban: <input type="text" name="txtIDPB" id="txtIDPB"><br>
+            Ten phong ban: <input type="text" name="txtName" id="txtName"> <br>
+            Mo ta: <input type="text" name="txtScript" id="txtScript"> <br> -->
+            
+    
+    
+        </div>
+        <div style="text-align: center;">
+            <input type="submit" name="btnAddPB" id="btnAddPB" value="Them">
+        </div>
+        
+
+    </form>
+
+    <?php
+    echo '<a href="../View/index.php">home page</a>'
+
+    ?>
+
+</body>
+</html>
